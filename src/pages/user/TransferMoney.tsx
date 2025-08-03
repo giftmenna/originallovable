@@ -18,7 +18,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import api from "@/services/api";
 
 import { z } from "zod";
-import { CircleCheck, Printer } from "lucide-react";
+import { CheckCircle, Printer } from "lucide-react";
 import { formatCurrency, formatDate } from "@/lib/utils";
 
 const { users, transactions, settings } = api;
@@ -701,7 +701,7 @@ ${currentTransaction.memo ? `Memo: ${currentTransaction.memo}` : ''}
               <Card className="animate-fade-in">
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
-                    <CircleCheck className="h-16 w-16 text-green-500" />
+                    <CheckCircle className="h-16 w-16 text-green-500" />
                   </div>
                   <CardTitle className="text-green-500 text-2xl">Completed</CardTitle>
                   <CardDescription>Your transaction has been processed successfully</CardDescription>
