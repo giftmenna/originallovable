@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL configuration - use Vite proxy in development
-const API_URL = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api');
+const API_URL = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5002/api');
 
 // Configure a reusable axios instance with sensible defaults
 // including JSON content‑type and a timeout.  `withCredentials: true`
@@ -230,6 +230,21 @@ export const users = {
     } catch (error) {
       console.error('Failed to delete avatar:', error);
       throw error;
+    }
+  },
+
+  /**
+   * Verify a user's PIN.  Expects a PIN string and returns validation result.
+   */
+  verifyPin: async (userId: string, pin: string) => {
+    try {
+      console.log('🔍 [FRONTEND] Verifying PIN for user:', userId);
+      const response = await api.post(`/users/${userId}/verify-pin`, { pin });
+      console.log('✅ [FRONTEND] PIN verification response:', response.data);
+      return response.data;
+    } catch (error: any) {
+      console.error('❌ [FRONTEND] Failed to verify PIN:', error.response?.data || error.message);
+      throw new Error(error.response?.data?.message || 'Failed to verify PIN');
     }
   },
 };

@@ -58,7 +58,7 @@ export default function Index() {
                   </div>
                   <div className="flex items-center justify-center lg:justify-start">
                     <Users className="h-5 w-5 text-bank-gold mr-2" />
-                    <span className="text-sm">12K+ Customers</span>
+                    <span className="text-sm">140k+ Business Owners Trust Nivalus Bank</span>
                   </div>
                   <div className="flex items-center justify-center lg:justify-start col-span-2 sm:col-span-1">
                     <Award className="h-5 w-5 text-bank-gold mr-2" />
@@ -265,7 +265,7 @@ export default function Index() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-bank-gold mb-2">12K+</div>
+              <div className="text-4xl md:text-5xl font-bold text-bank-gold mb-2">140k+</div>
               <p className="text-sm md:text-base text-muted-foreground">Satisfied Customers</p>
             </div>
             <div className="text-center">

@@ -9,12 +9,12 @@ export default defineConfig(({ mode }) => ({
     port: process.env.VITE_PORT ? parseInt(process.env.VITE_PORT) : 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'http://localhost:5002',
         changeOrigin: true,
         secure: false,
       },
       '/uploads': {
-        target: 'http://localhost:5001',
+        target: 'http://localhost:5002',
         changeOrigin: true,
         secure: false,
       },
