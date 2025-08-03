@@ -3,7 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Shield, CreditCard, Users, ChartBar, GraduationCap, Clock, Award, ShieldCheck, Leaf, BookOpen, Calculator } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, CreditCard, Users, BarChartBig, GraduationCap, Clock, Award, ShieldCheck, Leaf, BookOpen, Calculator } from "lucide-react";
 
 export default function Index() {
   return (
@@ -86,7 +86,7 @@ export default function Index() {
                           <p className="text-sm">Smart Banking</p>
                         </div>
                         <div className="bg-bank-gold/10 p-4 rounded-lg">
-                          <ChartBar className="h-6 w-6 text-bank-gold mb-2 mx-auto" />
+                          <BarChartBig className="h-6 w-6 text-bank-gold mb-2 mx-auto" />
                           <p className="text-sm">Investments</p>
                         </div>
                       </div>
@@ -125,7 +125,7 @@ export default function Index() {
             
             <div className="bg-background rounded-xl p-6 shadow-md hover:shadow-lg transition-all flex flex-col items-center text-center">
               <div className="bg-bank-gold/10 p-3 rounded-full mb-4">
-                <ChartBar className="h-8 w-8 text-bank-gold" />
+                <BarChartBig className="h-8 w-8 text-bank-gold" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Investment Services</h3>
               <p className="text-muted-foreground">
@@ -182,7 +182,7 @@ export default function Index() {
             
             <div className="bg-secondary/10 rounded-xl p-6 shadow-md hover:shadow-lg transition-all flex flex-col items-center text-center">
               <div className="bg-bank-gold/10 p-3 rounded-full mb-4">
-                <ChartBar className="h-8 w-8 text-bank-gold" />
+                <BarChartBig className="h-8 w-8 text-bank-gold" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Loan Calculator</h3>
               <p className="text-muted-foreground mb-4">
