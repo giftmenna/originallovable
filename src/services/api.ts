@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL configuration - use Vite proxy in development
-const API_URL = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5002/api');
+const API_URL = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_BASE_URL || '/api');
 
 // Configure a reusable axios instance with sensible defaults
 // including JSON content‑type and a timeout.  `withCredentials: true`
