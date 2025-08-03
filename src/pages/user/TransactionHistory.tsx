@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Calendar, CircleCheck, CircleDollarSign, History, Printer, ArrowLeft } from "lucide-react";
+import { Calendar, CheckCircle, CircleDollarSign, History, Printer, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
 import { transactions } from "@/services/api";
@@ -207,7 +207,7 @@ ${selectedTransaction.description ? `Memo: ${selectedTransaction.description}` :
                           </TableCell>
                           <TableCell className="text-right">
                             <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                              <CircleCheck className="h-3 w-3 mr-1" />
+                              <CheckCircle className="h-3 w-3 mr-1" />
                               {transaction.status}
                             </span>
                           </TableCell>
