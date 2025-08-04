@@ -67,7 +67,8 @@ export const auth = {
       // The backend returns the user object and sets a cookie.  We
       // return the response data to the caller so they can obtain
       // information about the logged in user if needed.
-      return response.data;
+      return response.data.user;
+
     } catch (error: any) {
       console.error('❌ [FRONTEND] Login error:', error.response?.data || error.message);
       throw new Error(error.response?.data?.message || 'Login failed. Please try again.');
@@ -138,12 +139,14 @@ export const users = {
         const response = await axios.post(`${API_URL}/signup`, userData, {
           headers: { 'Content-Type': 'application/json' },
         });
-        return response.data;
+        return response.data.user;
+
       }
       // Admin creation requires authentication.  Use the shared
       // axios instance so cookies are attached.
       const response = await api.post('/users', userData);
-      return response.data;
+      return response.data.user;
+
     } catch (error: any) {
       console.error('Failed to create user:', error.response?.data || error.message);
       throw new Error(error.response?.data?.message || 'Failed to create user');
@@ -153,7 +156,8 @@ export const users = {
   getAll: async () => {
     try {
       const response = await api.get('/users');
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to fetch users:', error);
       throw error;
@@ -163,7 +167,8 @@ export const users = {
   delete: async (userId: string) => {
     try {
       const response = await api.delete(`/users/${userId}`);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to delete user:', error);
       throw error;
@@ -173,7 +178,8 @@ export const users = {
   updateStatus: async (userId: string, status: string) => {
     try {
       const response = await api.patch(`/users/${userId}/status`, { status });
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to update user status:', error);
       throw error;
@@ -183,7 +189,8 @@ export const users = {
   updateBalance: async (userId: string, balance: number) => {
     try {
       const response = await api.patch(`/users/${userId}/balance`, { balance });
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to update user balance:', error);
       throw error;
@@ -197,7 +204,8 @@ export const users = {
   getById: async (userId: string) => {
     try {
       const response = await api.get(`/users/${userId}`);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to fetch user by ID:', error);
       throw error;
@@ -213,7 +221,8 @@ export const users = {
       console.log('🔄 [FRONTEND] Updating avatar for user:', userId);
       const response = await api.patch(`/users/${userId}/avatar`, data);
       console.log('✅ [FRONTEND] Avatar update response:', response.data);
-      return response.data;
+      return response.data.user;
+
     } catch (error: any) {
       console.error('❌ [FRONTEND] Failed to update avatar:', error.response?.data || error.message);
       throw new Error(error.response?.data?.message || 'Failed to update avatar');
@@ -226,7 +235,8 @@ export const users = {
   deleteAvatar: async (userId: string) => {
     try {
       const response = await api.delete(`/users/${userId}/avatar`);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to delete avatar:', error);
       throw error;
@@ -241,7 +251,8 @@ export const users = {
       console.log('🔍 [FRONTEND] Verifying PIN for user:', userId);
       const response = await api.post(`/users/${userId}/verify-pin`, { pin });
       console.log('✅ [FRONTEND] PIN verification response:', response.data);
-      return response.data;
+      return response.data.user;
+
     } catch (error: any) {
       console.error('❌ [FRONTEND] Failed to verify PIN:', error.response?.data || error.message);
       throw new Error(error.response?.data?.message || 'Failed to verify PIN');
@@ -257,7 +268,8 @@ export const transactions = {
   getAll: async () => {
     try {
       const response = await api.get('/transactions');
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to fetch transactions:', error);
       return [];
@@ -267,7 +279,8 @@ export const transactions = {
   create: async (transactionData: any) => {
     try {
       const response = await api.post('/transactions', transactionData);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to create transaction:', error);
       throw error;
@@ -277,7 +290,8 @@ export const transactions = {
   delete: async (id: string) => {
     try {
       const response = await api.delete(`/transactions/${id}`);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to delete transaction:', error);
       throw error;
@@ -292,7 +306,8 @@ export const transactions = {
   getByUserId: async (userId: string) => {
     try {
       const response = await api.get(`/users/${userId}/transactions`);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to fetch transactions for user:', error);
       throw error;
@@ -307,7 +322,8 @@ export const settings = {
   getAll: async () => {
     try {
       const response = await api.get('/settings');
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to fetch settings:', error);
       throw error;
@@ -317,7 +333,8 @@ export const settings = {
   update: async (settingsData: any) => {
     try {
       const response = await api.patch('/settings', settingsData);
-      return response.data;
+      return response.data.user;
+
     } catch (error) {
       console.error('Failed to update settings:', error);
       throw error;
